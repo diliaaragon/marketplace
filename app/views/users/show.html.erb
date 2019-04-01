@@ -1,0 +1,32 @@
+<div>
+ <h1>User information</h1>
+</div>
+<div>
+  <table>
+    <head>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      <tr>
+    </head>
+    <body>
+      <tr>
+        <td>Name: </td>
+        <td><%=@user.first_name%></td>
+      <tr>
+      <tr>
+        <td>Last name: </td>
+        <td><%=@user.last_name%></td>
+      <tr>
+      <tr>
+        <td>Email: </td>
+        <td><%=@user.email %></td>
+      <tr>
+      <tr>
+        <td>Registered since: </td>
+        <td><%=@user.created_at%></td>
+      <tr>
+    </body>
+  </table>
+</div>

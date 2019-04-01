@@ -1,0 +1,11 @@
+<div>
+  <h1> Create a New Account </h1>
+  <%= simple_form_for @user do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :cellphone %>
+    <%= f.input :address %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

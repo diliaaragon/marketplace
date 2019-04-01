@@ -1,3 +1,27 @@
-<% @users.each do |user|%>
- <p><%= user.first_name %> - <%=user.last_name%><p>
-<% end %>
+<%= link_to 'Add user', new_user_path, class: "btn btn-primary"%>
+<div>
+  <table>
+    <head>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Cellphone</th>
+        <th>Address</th>
+      </tr>
+    </head>
+    <body>
+    <% @users.each do |user|%>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name%></td>
+        <td><%= user.email%></td>
+        <td><%= user.cellphone%></td>
+        <td><%= user.address%></td>
+        <td><%=link_to 'show', user_path(user), class:"btn btn-primary"%></td>
+      </tr>
+    <% end %>
+    </body>
+  <table >
+<div>
+
