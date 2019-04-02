@@ -1,32 +1,52 @@
-<div>
+<div class="container">
  <h1>User information</h1>
 </div>
-<div>
-  <table>
-    <head>
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-      <tr>
-    </head>
-    <body>
-      <tr>
-        <td>Name: </td>
-        <td><%=@user.first_name%></td>
-      <tr>
-      <tr>
-        <td>Last name: </td>
-        <td><%=@user.last_name%></td>
-      <tr>
-      <tr>
-        <td>Email: </td>
-        <td><%=@user.email %></td>
-      <tr>
-      <tr>
-        <td>Registered since: </td>
-        <td><%=@user.created_at%></td>
-      <tr>
-    </body>
-  </table>
+
+<div class="container">
+  <div class="well span8 offset2">
+    <div class="row-fluid user-row">
+      <div class="span1 dropdown-user" data-for=".cyruxx">
+        <i class="icon-chevron-down text-muted"></i>
+      </div>
+    </div>  
+    <div class="panel-body">
+      <div class="row-fluid">
+        <div class="span3">
+          <img class="img-circle"
+            src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"
+            alt="User Pic">
+        </div>
+        <div class="span6">
+          <table class="table table-condensed table-responsive table-user-information">
+            <head>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+              <tr>
+            </head>
+            <body>
+              <tr>
+                <td>Name: </td>
+                <td><%=@user.first_name%></td>
+              <tr>
+              <tr>
+                <td>Last name: </td>
+                <td><%=@user.last_name%></td>
+              <tr>
+              <tr>
+                <td>Email: </td>
+                <td><%=@user.email %></td>
+              <tr>
+              <tr>
+                <td>Registered since: </td>
+                <td><%=@user.created_at%></td>
+              <tr>
+            </body>
+          </table>
+        </div> 
+      </div>
+    </div>
+  </div>
 </div>
+<%= link_to 'Back', users_path, class:"btn btn-primary" %>
