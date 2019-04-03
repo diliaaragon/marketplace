@@ -1,5 +1,7 @@
+# frozen_string_literal: true.
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
+  # Settings specified here will take precedence over those in- 
+  # config/application.rb.
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -14,8 +16,10 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
-  # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
+  # Ensures that a master key has been made available in either-
+  # ENV["RAILS_MASTER_KEY"]
+  # or in config/master.key. This key is used to decrypt credentials-
+  # (and other encrypted files).
   # config.require_master_key = true
 
   # Disable serving static files from the `/public` folder by default since
@@ -29,7 +33,8 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
-  # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
+  # `config.assets.precompile` and `config.assets.version` have moved-
+  # to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
@@ -38,7 +43,8 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
-  # Store uploaded files on the local file system (see config/storage.yml for options)
+  # Store uploaded files on the local file system-
+  # (see config/storage.yml for options)
   config.active_storage.service = :local
 
   # Mount Action Cable outside main process or domain
