@@ -1,13 +1,14 @@
-<%= link_to 'Add user', new_user_path, class: "btn btn-primary"%>
-<div>
-  <table>
-    <head>
+<div class="container">
+<br>
+  <table class="table">
+    <thead class="thead-dark">
       <tr>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Email</th>
-        <th>Cellphone</th>
-        <th>Address</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Email</th>
+        <th scope="col"> Cellphone</th>
+        <th scope="col">Address</th>
+        <th scope="col"></th>
       </tr>
     </head>
     <body>
@@ -24,4 +25,5 @@
     </body>
   <table >
 <div>
+<%= link_to 'Add user', new_user_path, class: "btn btn-primary"%>
 
