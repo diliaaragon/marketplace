@@ -12,7 +12,7 @@
       </tr>
     </head>
     <body>
-    <% @users.each do |user|%>
+    <% @users.each do |user| %>
       <tr>
         <td><%= user.first_name %></td>
         <td><%= user.last_name%></td>
@@ -25,5 +25,4 @@
     </body>
   <table >
 <div>
-<%= link_to 'Add user', new_user_path, class: "btn btn-primary"%>
-
+<%= link_to 'Add user', new_user_path, class: "btn btn-primary" %>
