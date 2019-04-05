@@ -15,19 +15,23 @@
   </head>
 
   <body>
-    <nav class="navbar  bg-dark navbar-dark">
+    <nav class="navbar bg-dark navbar-dark p-0">
       <%= link_to users_path do %>
         <%= image_tag('shoppy.png',
-                       style: 'width: 40px;',
-                       class:"navbar-brand") %>
+                      style: 'width: 40px;',
+                      class:"navbar-brand") %>
         Shoppy
       <% end %>
       <br>
-      <ul class="nav nav-tabs">
-        <li class="nav-item"><%= link_to 'Products',
-                                 products_path,
-                                 class:"btn btn-secondary btn-lg" %></li>
-      </ul>
+      <div>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <%= link_to 'Products',
+                        products_path,
+                        class:"btn btn-secondary btn-lg" %>
+          </li>
+        </ul>
+      </div>
     </nav>
     <br>
     <%= yield %>
