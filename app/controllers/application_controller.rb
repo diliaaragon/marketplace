@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
  def configure_devise_params
    devise_parameter_sanitizer.permit(:sign_up) do |user|
      user.permit(:email,
-                 :password, 
+                 :password,
                  :password_confirmation,
                  :first_name,
                  :last_name,
@@ -18,8 +18,8 @@ class ApplicationController < ActionController::Base
      user.permit(:email,
                  :password,
                  :password_confirmation,
-                 :current_password, 
-                 :first_name, 
+                 :current_password,
+                 :first_name,
                  :last_name,
                  :cellphone,
                  :address)
