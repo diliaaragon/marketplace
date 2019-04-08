@@ -20,6 +20,7 @@ coverage/*
 ssl
 .bundle/*
 dump.rdb
+.vscode/*
 
 # Ignore Doc
 doc/*
