@@ -31,9 +31,25 @@
                         class:"btn btn-secondary btn-lg" %>
           </li>
         </ul>
+      <div>
+        <% if signed_in? %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-secondary btn-sm" %>
+        <% else %>
+          <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-secondary btn-sm"%>
+          <%= link_to "Log in", new_user_session_path, class:"btn btn-secondary btn-sm"%>
+        <% end %>
       </div>
     </nav>
     <br>
+    <% if notice %>
+      <div class="alert-primary p-2 container" role="alert">
+        <%= notice%>
+      </div>
+    <% elsif alert %>
+      <div class="alert alert-primary p-2 container" role="alert">
+        <%= alert %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
