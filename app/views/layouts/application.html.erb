@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Marketplace</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application',
+                             media: 'all',
+                            'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 
+                               'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <%= link_to users_path do %>
+        <%= image_tag('shoppy.png', 
+                       style: 'width: 40px;',
+                       class:"navbar-brand") %>
+        Shoppy
+      <% end %>
+    </nav>
+    <br>
     <%= yield %>
   </body>
 </html>

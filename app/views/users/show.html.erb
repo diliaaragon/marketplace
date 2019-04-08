@@ -1,0 +1,42 @@
+<div class="container">
+  <h1 class="text-info">User information</h1>
+  <br>
+  <div class="well span8 offset2">
+    <div class="row-fluid user-row">
+      <div class="span1 dropdown-user">
+        <i class="icon-chevron-down text-muted"></i>
+      </div>
+    </div>  
+    <div class="panel-body">
+      <div class="row-fluid">
+        <div class="span3">
+        <%= image_tag('photo.png', class:'img-circle' ) %>
+        </div>
+        <div class="span6">
+          <table class="table table-condensed table-responsive 
+            table-user-information">
+            <body>
+              <tr>
+                <td>Name: </td>
+                <td><%=@user.first_name%></td>
+              <tr>
+              <tr>
+                <td>Last name: </td>
+                <td><%=@user.last_name%></td>
+              <tr>
+              <tr>
+                <td>Email: </td>
+                <td><%=@user.email %></td>
+              <tr>
+              <tr>
+                <td>Registered since: </td>
+                <td><%=@user.created_at%></td>
+              <tr>
+            </body>
+          </table>
+        </div> 
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Back', users_path, class:"btn btn-primary" %>
+</div>
