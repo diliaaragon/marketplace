@@ -1,5 +1,7 @@
-class ProductsController < ApplicationController
+# frozen_string_literal: true
 
+# Product controller with the CRUD methods
+class ProductsController < ApplicationController
   def index
     @products = Product.all
   end

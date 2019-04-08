@@ -1,4 +1,3 @@
-
 # PostgreSQL. Versions 9.1 and up are supported.
 #
 # Install the pg driver:
@@ -87,4 +86,4 @@ production:
   <<: *default
   database: marketplace_production
   username: marketplace
-  password: <%= ENV['MARKETPLACE_DATABASE_PASSWORD'] %> 
+  password: <%= ENV['MARKETPLACE_DATABASE_PASSWORD'] %>
