@@ -10,6 +10,10 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
   def create
     @product = Product.new(set_params)
     if @product.save
@@ -35,6 +39,6 @@ class ProductsController < ApplicationController
   private
 
   def set_params
-    params.require(:product).permit(:name, :description, :quantiy, :price)
+    params.require(:product).permit(:name, :description, :quantity, :price)
   end
 end
