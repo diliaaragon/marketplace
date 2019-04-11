@@ -2,8 +2,8 @@
 
 # User model with its relation to affair and validations.
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :products
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :first_name, presence: true, length: { minimum: 2, maximum: 25 }
@@ -11,4 +11,5 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[a-z\d\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   validates :email, presence: true, uniqueness: true, length: { maximum: 100 },
                     format: { with: VALID_EMAIL_REGEX }
+  has_many :products
 end
