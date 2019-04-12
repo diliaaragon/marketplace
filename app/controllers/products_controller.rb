@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(set_params)
+    @product = Product.new(products_params)
     if @product.save
       flash[:notice] = 'Product was successfully created'
       redirect_to product_path(@product)
@@ -29,7 +29,8 @@ class ProductsController < ApplicationController
   end
 
   def update
-    if @product.update(set_params)
+    @product = Product.find(params[:id])
+    if @product.update(products_params)
       redirect_to @product
     else
       render :edit
@@ -38,7 +39,7 @@ class ProductsController < ApplicationController
 
   private
 
-  def set_params
+  def products_params
     params.require(:product).permit(:name, :description, :quantity, :price)
   end
 end
