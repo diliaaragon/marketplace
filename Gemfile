@@ -13,6 +13,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise', '~> 4.6.2'
 gem 'image_processing', '~> 1.2'
+gem "google-cloud-storage", "~> 1.11", require: false
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem "letter_opener"
