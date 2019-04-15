@@ -26,16 +26,16 @@
         <% if signed_in? %>
           <li><%= link_to "Logout", destroy_user_session_path,
                                     method: :delete,
-                                    class:"btn btn-secondary btn-sm" %>
+                                    class:"btn btn-outline-light m-2 p-2" %>
           </li>
         <% else %>
           <li>
           <%= link_to "Log in", new_user_session_path,
-                                class:"btn btn-secondary btn-sm" %>
+                                class:"btn btn-outline-primary m-2 p-2" %>
           </li>
           <li>
           <%= link_to "Sign Up", new_user_registration_path,
-                                 class:"btn btn-secondary btn-sm" %>
+                                 class:"btn btn-outline-light m-2 p-2" %>
           </li>
         <% end %>
       </ul>
