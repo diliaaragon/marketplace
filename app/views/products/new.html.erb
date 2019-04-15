@@ -1,6 +1,7 @@
 <div class="container">
   <h1 class="text-info"> Create a New Product </h1><br>
   <%= simple_form_for @product do |f| %>
+    <%= f.file_field :image %><br>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :quantity %>
