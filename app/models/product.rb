@@ -6,6 +6,8 @@ class Product < ApplicationRecord
 
   has_one_attached :image
 
+  has_and_belongs_to_many :categories
+
   validates :name, presence: true, length: { minimum: 3, maximum: 15 }
   validates :description, presence: true, length: { minimum: 10 }
   validates :quantity, presence: true

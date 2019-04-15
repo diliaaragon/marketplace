@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_04_12_201555) do
-=======
 ActiveRecord::Schema.define(version: 2019_04_15_211417) do
->>>>>>> Add the category model with its validations
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +42,13 @@ ActiveRecord::Schema.define(version: 2019_04_15_211417) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "categories_products", id: false, force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "product_id"
+    t.index ["category_id"], name: "index_categories_products_on_category_id"
+    t.index ["product_id"], name: "index_categories_products_on_product_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
@@ -74,5 +77,7 @@ ActiveRecord::Schema.define(version: 2019_04_15_211417) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "categories_products", "categories"
+  add_foreign_key "categories_products", "products"
   add_foreign_key "products", "users"
 end
