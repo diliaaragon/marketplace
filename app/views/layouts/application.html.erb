@@ -22,23 +22,23 @@
                       class:"navbar-brand") %>
         Shoppy
       <% end %>
-      <br>
-      <div>
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <%= link_to 'Products',
-                        products_path,
-                        class:"btn btn-secondary btn-lg" %>
-          </li>
-        </ul>
-      <div>
+      <ul class="nav nav-tabs">
         <% if signed_in? %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-secondary btn-sm" %>
+          <li><%= link_to "Logout", destroy_user_session_path,
+                                    method: :delete,
+                                    class:"btn btn-secondary btn-sm" %>
+          </li>
         <% else %>
-          <%= link_to "Sign Up", new_user_registration_path, class:"btn btn-secondary btn-sm"%>
-          <%= link_to "Log in", new_user_session_path, class:"btn btn-secondary btn-sm"%>
+          <li>
+          <%= link_to "Log in", new_user_session_path,
+                                class:"btn btn-secondary btn-sm" %>
+          </li>
+          <li>
+          <%= link_to "Sign Up", new_user_registration_path,
+                                 class:"btn btn-secondary btn-sm" %>
+          </li>
         <% end %>
-      </div>
+      </ul>
     </nav>
     <br>
     <% if notice %>
