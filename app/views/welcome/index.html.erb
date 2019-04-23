@@ -1,0 +1,18 @@
+<div class=" container w-50">
+  <% @products.each do |product|%>
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+        <%= image_tag('gris.jpg', class:"card-img", style:'width: 180px') %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%= product.name %></h5>
+            <p class="card-text"><%= product.description %></p>
+            <%= link_to 'show', product_path(product), class:"btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
