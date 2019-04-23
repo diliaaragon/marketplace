@@ -294,6 +294,7 @@ DEPENDENCIES
   aws-sdk-s3
   aasm
   aws-sdk-s3
+  aasm
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3.1)
   byebug
