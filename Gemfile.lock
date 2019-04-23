@@ -19,6 +19,8 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (5.0.3)
+      concurrent-ruby (~> 1.0)
     actioncable (5.2.3)
       actionpack (= 5.2.3)
       nio4r (~> 2.0)
@@ -283,6 +285,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk-s3
+  aasm
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3.1)
   byebug
