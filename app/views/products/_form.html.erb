@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="text-info"> <%= name %> Product </h1><br>
+  <%= simple_form_for @product do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :quantity %>
+    <%= f.input :price %>
+    <%= f.button :submit, class:"btn btn-primary" %>
+    <%= link_to 'Back', products_path, class:"btn btn-primary" %>
+    <br>
+  <% end %>
+</div>

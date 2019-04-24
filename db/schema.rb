@@ -41,6 +41,6 @@ ActiveRecord::Schema.define(version: 2019_04_11_194342) do
     t.index ["email"], name: "index_users_on_email"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
+  
   add_foreign_key "products", "users"
 end
