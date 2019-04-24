@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(version: 2019_05_20_193345) do
     t.string "status", default: "unpublished"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_products_on_user_id"
-    t.string "status", default: "unpublished"
   end
 
   create_table "users", force: :cascade do |t|
