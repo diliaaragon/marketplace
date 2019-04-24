@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   before_action :set_product, except:[ :index, :new, :create ]
 
   def index
-    @products = Product.published
+    @products = Product.product_by_user
   end
 
   def new
