@@ -32,4 +32,6 @@ class Product < ApplicationRecord
       transitions from: [:published, :unpublished], to: :archived
     end
   end
+
+  scope :product_by_user, -> { where(user_id: current_user) }
 end
