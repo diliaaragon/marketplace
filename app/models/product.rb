@@ -2,6 +2,8 @@
 
 # Product model with its respective validations.
 class Product < ApplicationRecord
+  belongs_to :User
+
   validates :name, presence: true, length: { minimum: 3, maximum: 15 }
   validates :description, presence: true, length: { minimum: 10 }
   validates :quantity, presence: true
