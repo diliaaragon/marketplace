@@ -1,6 +1,7 @@
 <div class="container w-50 shadow-lg p-3 mb-5 bg-white rounded-lg border border-info">
   <h1 class="text-info title text-center"> <%= name %> Product </h1><br>
   <%= simple_form_for @product do |f| %>
+    <%= f.file_field :image %><br>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :quantity %>
