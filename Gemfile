@@ -7,18 +7,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 
 gem "aws-sdk-s3", require: false
-<<<<<<< HEAD
 gem 'aasm', '~> 5.0.4'
-=======
->>>>>>> Fix active storage configurations
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise', '~> 4.6.2'
-<<<<<<< HEAD
 gem 'image_processing', '~> 1.2'
-=======
->>>>>>> Fix active storage configurations
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem "letter_opener"
