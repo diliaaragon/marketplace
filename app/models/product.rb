@@ -15,7 +15,7 @@ class Product < ApplicationRecord
   validates :quantity, presence: true
   validates :price, presence: true
 
-  aasm column: "status" do
+  aasm :column => 'status' do
     state :unpublished, initial: true
     state :published
     state :archived
@@ -28,7 +28,8 @@ class Product < ApplicationRecord
       transitions from: :published, to: :unpublished
     end
 
-    event :file
+    event :file do
       transitions from: :published, to: :archived
+    end
   end
 end
