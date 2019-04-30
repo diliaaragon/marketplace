@@ -20,7 +20,8 @@
                       class:"navbar-brand")%>
         Shoppy
       <% end %>
-      <ul class="nav nav-tabs justify-content-end">
+
+      <ul class="nav nav-tabs">
         <% if signed_in? %>
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button"
@@ -70,12 +71,13 @@
         <% end %>
       </ul>
     </nav>
-    <br>
     <% if notice %>
+      <br>
       <div class="alert-primary p-2 container" role="alert">
         <%= notice%>
       </div>
     <% elsif alert %>
+      <br>
       <div class="alert alert-primary p-2 container" role="alert">
         <%= alert %>
       </div>
