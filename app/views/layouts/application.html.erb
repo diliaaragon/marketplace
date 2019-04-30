@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag 'application',
                              media: 'all',
                             'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 
+    <%= javascript_include_tag 'application',
                                'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -24,10 +24,21 @@
       <% end %>
       <ul class="nav nav-tabs">
         <% if signed_in? %>
-          <li><%= link_to "Logout", destroy_user_session_path,
-                                    method: :delete,
-                                    class:"btn btn-outline-light m-2 p-2" %>
-          </li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                              id="dropdownMenuButton"
+                                                              data-toggle="dropdown"
+                                                              aria-haspopup="true"
+                                                              aria-expanded="false">
+              <%= current_user.first_name %> <%= current_user.last_name %>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to 'My products', products_path, class:"dropdown-item" %>
+              <%= link_to "Logout", destroy_user_session_path,
+                                    class:"dropdown-item",
+                                    method: :delete %>
+            </div>
+          </div>
         <% else %>
           <li>
           <%= link_to "Log in", new_user_session_path,
