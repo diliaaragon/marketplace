@@ -20,9 +20,9 @@
                       class:"navbar-brand")%>
         Shoppy
       <% end %>
-
       <ul class="nav nav-tabs">
-        <% if signed_in? %>
+        <li class="nav-item">
+          <% if signed_in? %>
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button"
                                                               id="dropdownMenuButton"
@@ -33,32 +33,13 @@
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <%= link_to 'My products', products_path, class:"dropdown-item" %>
-                <%= link_to "Logout", destroy_user_session_path,
-                                      class:"dropdown-item",
-                                      method: :delete %>
                 <%=link_to 'My profile', edit_user_registration_path(current_user), class:"dropdown-item" %>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item navbar-brand">
-            <div class="dropdown">
-              <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
-                                                                id="dropdownMenuButton"
-                                                                data-toggle="dropdown"
-                                                                aria-haspopup="true"
-                                                                aria-expanded="false">
-                <%= image_tag('user.png',style: 'width: 30px;', class:"navbar-brand")%>
-                <%= current_user.first_name %> <%= current_user.last_name %>
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <%= link_to 'My products', products_path, class:"dropdown-item" %>
                 <%= link_to "Logout", destroy_user_session_path,
                                       class:"dropdown-item",
                                       method: :delete %>
-                <%=link_to 'My profile', user_path(current_user), class:"dropdown-item" %>
               </div>
-            </div>
-          </li>
+          </div>
+        </li>
         <% else %>
           <li class="nav-item">
           <%= link_to "Log in", new_user_session_path,
