@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  get 'products/index'
+  
   devise_for :users
-  root 'users#index'
+  root 'products#index'
   resources :products
   resources :users
 end
