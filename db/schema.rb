@@ -10,8 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_15_220414) do
 
+
+ActiveRecord::Schema.define(version: 2019_04_23_152842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_04_15_220414) do
     t.datetime "updated_at", null: false
   end
 
+
   create_table "categories_products", id: false, force: :cascade do |t|
     t.bigint "category_id"
     t.bigint "product_id"
@@ -57,6 +59,7 @@ ActiveRecord::Schema.define(version: 2019_04_15_220414) do
     t.float "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "unpublished"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
@@ -76,7 +79,6 @@ ActiveRecord::Schema.define(version: 2019_04_15_220414) do
     t.index ["email"], name: "index_users_on_email"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories_products", "categories"
