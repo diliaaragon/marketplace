@@ -1,28 +1,20 @@
-<div class="container w-50">
-  <br>
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @products.each do |product|%>
-        <tr>
-          <td><%= product.name %></td>
-          <td><%= product.description %></td>
-          <td><%= link_to 'show', product_path(product),
-                                  class:"btn btn-primary" %>
-          </td>
-          <td><%= link_to 'Edit', edit_product_path(product),
-                                  class:"btn btn-primary" %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  <table>
+
+<div class=" container w-50">
+  <% @products.each do |product|%>
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+        <%= image_tag('gris.jpg', class:"card-img", style:'width: 180px') %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%= product.name %></h5>
+            <p class="card-text"><%= product.description %></p>
+            <%= link_to 'show', product_path(product), class:"btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to 'Add product', new_product_path, class: "btn btn-primary" %>
 </div>
-<%= link_to 'Add product', new_product_path, class: "btn btn-primary" %>

@@ -18,6 +18,8 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(products_params)
+    @product.user_id = current_user.id
+
     if @product.save
       flash[:notice] = 'Product was successfully created'
       redirect_to product_path(@product)
@@ -32,6 +34,8 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
+    @product.user_id = current_user.id
+
     if @product.update(products_params)
       redirect_to @product
     else
@@ -42,6 +46,6 @@ class ProductsController < ApplicationController
   private
 
   def products_params
-    params.require(:product).permit(:name, :description, :quantity, :price)
+    params.require(:product).permit(:name, :description, :quantity, :price, :image)
   end
 end
