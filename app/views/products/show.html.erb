@@ -3,8 +3,8 @@
   <br>
   <div class="well span8 offset2">
     <div class="row-fluid user-row">
-      <div class="span1 dropdown-user">
-        <i class="icon-chevron-down text-muted"></i>
+      <div class="w-25 h-25">
+        <%= image_tag @product.image, class:"w-50 h-25" if @product.image.attached? %>
       </div>
     </div>  
     <div class="panel-body">
@@ -36,5 +36,6 @@
     </div>
   </div>
   <%= link_to 'Back', products_path, class:"btn btn-primary" %>
+  <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-primary" %>
 </div>
 

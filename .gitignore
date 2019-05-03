@@ -8,6 +8,7 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
+.byebug_history
 logfile
 logs
 parsed_logs
@@ -21,7 +22,6 @@ ssl
 .bundle/*
 dump.rdb
 .vscode/*
-
 # Ignore Doc
 doc/*
 

@@ -9,6 +9,7 @@
         <th scope="col"> Cellphone</th>
         <th scope="col">Address</th>
         <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
     </head>
     <body>
@@ -20,6 +21,7 @@
         <td><%= user.cellphone%></td>
         <td><%= user.address%></td>
         <td><%=link_to 'show', user_path(user), class:"btn btn-primary"%></td>
+        <td><%=link_to 'Edit', edit_user_path(user), class:"btn btn-primary"%></td>
       </tr>
     <% end %>
     </body>
