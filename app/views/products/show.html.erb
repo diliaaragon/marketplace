@@ -1,15 +1,18 @@
-<div class="container">
-  <h1 class="text-info">Product information</h1>
+
+<div class="container  w-75 shadow-lg p-3 mb-5 bg-white rounded-lg ">
+  <h1 class="text-info text-center">Product information</h1>
   <br>
   <div class="well span8 offset2">
-    <div class="row-fluid user-row">
-      <div class="w-25 h-25">
-        <%= image_tag @product.image, class:"w-50 h-25" if @product.image.attached? %>
-      </div>
-    </div>  
-    <div class="panel-body">
-      <div class="row-fluid">
-        <div class="span6">
+    <div class="container px-lg-3">
+      <div class="row mx-lg-n4">
+        <div class="col py-2 px-lg-4">
+          <% if @product.image.attached? %>
+            <%= image_tag @product.image %>
+          <% else %>
+            <%= image_tag('gris.jpg')%>
+          <% end %>
+        </div>
+        <div class="col py-2 px-lg-4 ">
           <table class="table table-condensed table-responsive 
             table-user-information">
             <body>
@@ -38,4 +41,3 @@
   <%= link_to 'Back', products_path, class:"btn btn-primary" %>
   <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-primary" %>
 </div>
-
