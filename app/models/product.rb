@@ -20,15 +20,15 @@ class Product < ApplicationRecord
     state :archived
 
     event :publish do
-      transitions from: :unpublished, to: :published
+      transitions from: [:unpublished, :archived], to: :published
     end
 
     event :unpublished do
       transitions from: :published, to: :unpublished
     end
 
-    event :file do
-      transitions from: :published, to: :archived
+    event :archive do
+      transitions from: [:published, :published], to: :archived
     end
   end
 end
