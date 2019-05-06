@@ -36,6 +36,7 @@
               <%= link_to "Logout", destroy_user_session_path,
                                     class:"dropdown-item",
                                     method: :delete %>
+              <%=link_to 'My profile', user_path(current_user), class:"dropdown-item"%>
             </div>
           </div>
         <% else %>
