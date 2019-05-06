@@ -16,7 +16,7 @@
 
   <body>
     <nav class="navbar bg-dark navbar-dark p-0">
-      <%= link_to root_path do %>
+      <%= link_to root_path, class:"navbar-brand p-2 text-info title" do %>
         <%= image_tag('shoppy.png',
                       style: 'width: 40px;',
                       class:"navbar-brand")%>
@@ -44,11 +44,11 @@
         <% else %>
           <li class="nav-item">
           <%= link_to "Log in", new_user_session_path,
-                                class:"btn btn-outline-primary m-2 p-2" %>
+                                class:"btn btn-info m-2 p-2" %>
           </li>
           <li class="nav-item">
           <%= link_to "Sign Up", new_user_registration_path,
-                                 class:"btn btn-outline-light m-2 p-2" %>
+                                 class:"btn btn-light m-2 p-2" %>
           </li>
         <% end %>
       </ul>
