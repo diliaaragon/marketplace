@@ -20,7 +20,7 @@
                       class:"navbar-brand")%>
         Shoppy
       <% end %>
-      <ul class="nav justify-content-end navbar-brand">
+      <ul class="nav nav-tabs justify-content-end">
         <% if signed_in? %>
           <li class="nav-item navbar-brand">
             <div class="dropdown">
@@ -57,11 +57,11 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item navbar-brand">
+          <li class="nav-item">
           <%= link_to "Log in", new_user_session_path,
                                 class:"btn btn-info m-2 p-2" %>
           </li>
-          <li class="nav-item navbar-brand">
+          <li class="nav-item">
           <%= link_to "Sign Up", new_user_registration_path,
                                  class:"btn btn-light m-2 p-2" %>
           </li>
