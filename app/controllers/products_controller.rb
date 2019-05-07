@@ -34,6 +34,12 @@ class ProductsController < ApplicationController
     redirect_to @product
   end
 
+  def archive
+    @product = Product.find(params[:id])
+    @product.archive!
+    redirect_to @product
+  end
+
   def show
     @product = Product.find(params[:id])
   end
