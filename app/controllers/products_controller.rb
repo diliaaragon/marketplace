@@ -28,22 +28,15 @@ class ProductsController < ApplicationController
   end
 
   def publish
-<<<<<<< HEAD
-=======
-    @product = Product.find(params[:id])
->>>>>>> Add the method publish to products controller and add bootton publish
     @product.publish!
     redirect_to @product
   end
 
-<<<<<<< HEAD
   def archive
     @product.archive!
     redirect_to @product
   end
 
-=======
->>>>>>> Add the method publish to products controller and add bootton publish
   def show
     @product = Product.find(params[:id])
   end
