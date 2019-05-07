@@ -1,4 +1,8 @@
-<% @categories.each do |category|%>
- <%= category.name %>
- <%= category.created_at %>
-<% end %>
+<div class="container w-50 shadow-lg p-3 mb-5 bg-white rounded">
+  <h1 class="text-info title"> Categories List </h1>
+  <% @categories.each do |category|%>
+    <ul>
+      <li><%= category.name %> - <%= category.created_at %></li>
+    </ul>
+  <% end %>
+</div>
