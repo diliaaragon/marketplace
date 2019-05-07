@@ -1,9 +1,1 @@
-<div class="container">
-  <h1 class="text-info title "> New Category </h1><br>
-  <%= simple_form_for @category do |f| %>
-    <%= f.input :name %>
-    <%= f.button :submit, class:"btn btn-primary" %>
-    <%= link_to 'Back', categories_path, class:"btn btn-primary" %>
-    <br>
-  <% end %>
-</div>
+<%= render 'form', name:'Create a new' %>
