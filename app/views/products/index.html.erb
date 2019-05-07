@@ -1,16 +1,28 @@
-
 <div class=" container w-50">
   <% @products.each do |product|%>
     <div class="card mb-3">
       <div class="row no-gutters">
         <div class="col-md-4">
-        <%= image_tag('gris.jpg', class:"card-img", style:'width: 180px') %>
+          <% if product.image.attached? %>
+            <%= image_tag( product.image, class:"card-img", style:'width: 180px') %>
+          <% else %>
+            <%= image_tag('gris.jpg', class:"card-img", style:'width: 180px') %>
+          <% end %>
         </div>
         <div class="col-md-8">
           <div class="card-body">
             <h5 class="card-title"><%= product.name %></h5>
             <p class="card-text"><%= product.description %></p>
-            <%= link_to 'show', product_path(product), class:"btn btn-primary" %>
+            <%= link_to 'show', product_path(product), class:"btn btn-info" %>
+            <%= link_to 'edit', edit_product_path(product), class:"btn btn-dark" %>
+            <% if product.may_publish? && product.may_archive? %>
+              <%= link_to 'publish', "/products/#{product.id}/publish", class:"btn btn-success", method: :put %>
+              <%= link_to 'Archive', "/products/#{product.id}/archive", class:"btn btn-secondary", method: :put %>
+            <% elsif product.may_archive? %>
+              <%= link_to 'Archive', "/products/#{product.id}/archive", class:"btn btn-secondary", method: :put %>
+            <% else %>
+              <%= link_to 'publish', "/products/#{product.id}/publish", class:"btn btn-success", method: :put %>
+            <% end %>
           </div>
         </div>
       </div>

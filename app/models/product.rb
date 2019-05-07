@@ -29,7 +29,7 @@ class Product < ApplicationRecord
     end
 
     event :archive do
-      transitions from: [:published, :published], to: :archived
+      transitions from: [:published, :unpublished], to: :archived
     end
   end
 end
