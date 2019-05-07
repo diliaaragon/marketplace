@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   put "/products/:id/archive", to: "products#archive"
   resources :products
   resources :users
+  resources :categories
 end
