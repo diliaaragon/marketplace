@@ -55,12 +55,18 @@
     </nav>
     <br>
     <% if notice %>
-      <div class="alert-primary p-2 container" role="alert">
+      <div class="alert alert-primary p-2 container alert-dismissible fade show" role="alert">
         <%= notice%>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     <% elsif alert %>
-      <div class="alert alert-primary p-2 container" role="alert">
+      <div class="alert alert-warning p-2 container alert-dismissible fade show" role="alert">
         <%= alert %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     <% end %>
     <%= yield %>
