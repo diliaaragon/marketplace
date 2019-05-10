@@ -22,6 +22,11 @@ Rails.application.configure do
   # (and other encrypted files).
   # config.require_master_key = true
 
+  #MAil
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+  Rails.application.routes.default_url_options = { host: ENV['HOST'] }
+
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
@@ -70,7 +75,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "marketplace_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
-
+  config.action_mailer.default_options = { :host => "localhost:3000" }
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false

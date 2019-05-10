@@ -28,6 +28,11 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
+   
+  #For mailing
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+  Rails.application.routes.default_url_options = { host: "localhost:3000" }
 
   # Store uploaded files on the local file system-
   # (see config/storage.yml for options)

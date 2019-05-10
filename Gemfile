@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem "letter_opener"
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.3'
