@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title >Email of pruducts new</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Lobster+Two');
+    </style>
+  </head>
+  <body style="margin:0px; padding:0px;">
+
+  <table align="center" border="1" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;" >
+    <tr>
+      <td align="center" bgcolor="#70bbd9" style="padding: 60px 0 60px 0;">
+      <h1 style="font-family: 'Lobster Two', cursive;">Check out this new product!</h1>
+       <img src="https://gifimage.net/wp-content/uploads/2017/09/animated-gif-in-email-2.gif" alt="Creating Email Magic" width="300" height="230" style="display: block;">
+      </td>
+    </tr>
+    <tr>
+      <td bgcolor="#ffffff" align="center">
+        <h2 style="font-family: 'Lobster Two', cursive;"><%= @product.name %></h2><br>
+        <%= image_tag(@product.image, style:"width: 420px", align:"center") %><br>
+        <%= link_to 'Show more...', product_url(@product) %><br>
+      </td>
+    </tr>
+    <tr bgcolor="#ee4c50">
+      <td>
+      <br>
+      <br>
+      </td>
+    </tr>
+  </table>
+</html>
+
+
