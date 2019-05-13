@@ -27,8 +27,4 @@ class ApplicationController < ActionController::Base
                  :address)
    end
  end
-
-  def current_user
-    Product.current_user = current_user
-  end
 end

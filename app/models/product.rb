@@ -10,8 +10,6 @@ class Product < ApplicationRecord
 
   has_one_attached :image
 
-  cattr_accessor :current_user
-
   validates :name, presence: true, length: { minimum: 3, maximum: 15 }
   validates :description, presence: true, length: { minimum: 10 }
   validates :quantity, presence: true
