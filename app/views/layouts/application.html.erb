@@ -22,8 +22,8 @@
                       class:"navbar-brand") %>
         Shoppy
       <% end %>
-      <ul class="nav nav-tabs justify-content-end">
-        <% if signed_in? %>
+      <ul class="nav nav-tabs">
+        <% if user_signed_in? %>
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button"
                                                               id="dropdownMenuButton"
