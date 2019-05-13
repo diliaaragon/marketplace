@@ -19,6 +19,8 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (5.0.4)
+      concurrent-ruby (~> 1.0)
     actioncable (5.2.3)
       actionpack (= 5.2.3)
       nio4r (~> 2.0)
@@ -178,7 +180,6 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     puma (3.12.1)
-
     rack (2.0.7)
     rack-pjax (1.1.0)
       nokogiri (~> 1.5)
@@ -283,6 +284,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm (~> 5.0.4)
   aws-sdk-s3
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3.1)

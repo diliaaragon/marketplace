@@ -3,6 +3,7 @@
 # Product controller with the CRUD methods
 class ProductsController < ApplicationController
   before_action :authenticate_user!, except: [ :index, :show ]
+  before_action :set_product, except:[ :index, :new, :create ]
 
   def index
     @products = Product.all
@@ -13,13 +14,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def create
     @product = Product.new(products_params)
     @product.user_id = current_user.id
-
     if @product.save
       flash[:notice] = 'Product was successfully created'
       redirect_to product_path(@product)
@@ -28,14 +27,21 @@ class ProductsController < ApplicationController
     end
   end
 
+  def publish
+    @product.publish!
+    redirect_to @product
+  end
+
+  def archive
+    @product.archive!
+    redirect_to @product
+  end
+
   def show
-    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
     @product.user_id = current_user.id
-
     if @product.update(products_params)
       redirect_to @product
     else
@@ -47,5 +53,9 @@ class ProductsController < ApplicationController
 
   def products_params
     params.require(:product).permit(:name, :description, :quantity, :price, :image)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 end
