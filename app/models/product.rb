@@ -33,5 +33,5 @@ class Product < ApplicationRecord
     end
   end
 
-  scope :product_by_user, -> { where(user_id: current_user) }
+  scope :product_by_user, ->(current_user) { where(user_id: current_user) }
 end
