@@ -24,17 +24,21 @@ Rails.application.configure do
 
   #MAil
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: "https://guarded-cove-67877.herokuapp.com" }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
-    address:              'dilia.aragon@koombea.com',
+    address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'gmail.com',
-    user_name:            '<dilia>',
-    password:             '<3016783874>',
+    domain:               'https://guarded-cove-67877.herokuapp.com',
+    user_name:            'dilia.aragon@koombea.com',
+    password:             '3016783874',
     authentication:       'plain',
     enable_starttls_auto: true }
 
-  config.action_mailer.perform_deliveries = true
-  Rails.application.routes.default_url_options = { host: ENV['HOST'] }
+  # config.action_mailer.perform_deliveries = true
+  # Rails.application.routes.default_url_options = { host: "https://guarded-cove-67877.herokuapp.com" }
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
