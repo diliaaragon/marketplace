@@ -28,7 +28,11 @@
                                                               data-toggle="dropdown"
                                                               aria-haspopup="true"
                                                               aria-expanded="false">
-              <%= image_tag('user.png',style: 'width: 30px;', class:"navbar-brand")%>
+              <% if current_user.photo.attached? %>
+                <%= image_tag(current_user.photo,style: 'width: 30px;', class:"navbar-brand")%>
+              <% else %>
+                <%= image_tag('photo.png',style: 'width: 30px;', class:"navbar-brand")%>
+              <% end %>
               <%= current_user.first_name %> <%= current_user.last_name %>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
