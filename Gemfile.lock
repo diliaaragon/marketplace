@@ -304,7 +304,7 @@ DEPENDENCIES
   rails_admin_rollincode (~> 1.0)
   sass-rails (~> 5.0)
   simple_form (~> 4.1.0)
-  spring
+  spring (~> 2.0, >= 2.0.2)
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
   tzinfo-data
