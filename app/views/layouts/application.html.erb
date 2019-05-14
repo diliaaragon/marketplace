@@ -20,19 +20,35 @@
                       class:"navbar-brand")%>
       Shoppy
       <% end %>
-      <ul class="nav nav-tabs">
+      <ul class="nav navbar-brand">
         <% if user_signed_in? %>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button"
-                                                              id="dropdownMenuButton"
-                                                              data-toggle="dropdown"
-                                                              aria-haspopup="true"
-                                                              aria-expanded="false">
-              <% if current_user.photo.attached? %>
-                <%= image_tag(current_user.photo,style: 'width: 30px;', class:"navbar-brand")%>
-              <% else %>
-                <%= image_tag('photo.png',style: 'width: 30px;', class:"navbar-brand")%>
-              <% end %>
+          <li class="nav-item navbar-brand">
+            <div class="dropdown">
+              <button class=" btn" type="button"
+                                                id="dropdownMenuButton"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true"
+                                                aria-expanded="false">
+              <%= image_tag('sum2.png',style: 'width: 40px;', class:" p-0") %>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <%= link_to 'Add products', new_product_path, class:"dropdown-item" %>
+                <%= link_to 'Add category', new_category_path, class:"dropdown-item" %>
+              </div>
+            </div>
+          </li>
+          <li class="nav navbar-brand">
+            <div class="dropdown">
+              <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+                                                                id="dropdownMenuButton"
+                                                                data-toggle="dropdown"
+                                                                aria-haspopup="true"
+                                                                aria-expanded="false">
+                <% if current_user.photo.attached? %>
+                  <%= image_tag(current_user.photo,style: 'width: 30px;', class:"navbar-brand")%>
+                <% else %>
+                  <%= image_tag('photo.png',style: 'width: 30px;', class:"navbar-brand")%>
+                <% end %>
               <%= current_user.first_name %> <%= current_user.last_name %>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
