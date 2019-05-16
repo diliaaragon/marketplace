@@ -13,23 +13,23 @@
   </head>
 
   <body>
-    <nav class="navbar bg-dark navbar-dark p-0">
-      <%= link_to root_path class:"navbar-brand text-info title" do %>
+    <nav class="navbar bg-dark navbar-dark pl-4">
+      <%= link_to root_path, class:"title navbar-brand text-info" do %>
         <%= image_tag('shoppy.png',
                       style: 'width: 40px;',
                       class:"navbar-brand")%>
-      Shoppy
+        Shoppy
       <% end %>
-      <ul class="nav nav-tabs justify-content-end">
+      <ul class="nav justify-content-end">
         <% if signed_in? %>
-          <li class="nav-item navbar-brand">
+          <li class="nav nav-item">
             <div class="dropdown">
-              <button class=" btn-sm" type="button"
+              <button class=" btn mr-2" type="button"
                                                 id="dropdownMenuButton"
                                                 data-toggle="dropdown"
                                                 aria-haspopup="true"
                                                 aria-expanded="false">
-              <%= image_tag('sum2.png',style: 'width: 40px;', class:" p-0") %>
+              <%= image_tag('sum2.png',style: 'width: 40px;', class:" p-0 mb-2") %>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <%= link_to 'Add products', new_product_path, class:"dropdown-item" %>
@@ -37,14 +37,14 @@
               </div>
             </div>
           </li>
-          <li class="nav-item navbar-brand">
+          <li class="nav-item">
             <div class="dropdown">
               <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
                                                                 id="dropdownMenuButton"
                                                                 data-toggle="dropdown"
                                                                 aria-haspopup="true"
                                                                 aria-expanded="false">
-                <%= image_tag('user.png',style: 'width: 30px;', class:"navbar-brand")%>
+                <%= image_tag('user.png',style: 'width: 20px;', class:"navbar-brand mt-1")%>
                 <%= current_user.first_name %> <%= current_user.last_name %>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
