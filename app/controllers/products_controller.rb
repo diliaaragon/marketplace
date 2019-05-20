@@ -3,7 +3,7 @@
 # Product controller with the CRUD methods
 class ProductsController < ApplicationController
   before_action :authenticate_user!, except: [ :show ]
-  before_action :set_product, except:[ :index, :new, :create ]
+  before_action :set_product, except:[ :index, :new, :create, :show ]
 
   def index
     @products = Product.product_by_user(current_user)
@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-
+    @product = Product.find(params[:id])
   end
 
   def update
@@ -63,6 +63,6 @@ class ProductsController < ApplicationController
   end
 
   def set_product
-    @product = Product.find(params[:id])
+    @product = Product.product_by_user(current_user).find(params[:id])
   end
 end
