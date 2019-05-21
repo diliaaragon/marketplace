@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  validates :photo, presence: true
   validates :first_name, presence: true, length: { minimum: 2, maximum: 25 }
   validates :last_name, presence: true, length: { minimum: 2, maximum: 25 }
   VALID_EMAIL_REGEX = /\A[a-z\d\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze

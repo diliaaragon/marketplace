@@ -31,12 +31,14 @@
                                                               aria-haspopup="true"
                                                               aria-expanded="false">
               <%= current_user.first_name %> <%= current_user.last_name %>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <%= link_to 'My products', products_path, class:"dropdown-item" %>
-              <%= link_to "Logout", destroy_user_session_path,
-                                    class:"dropdown-item",
-                                    method: :delete %>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <%= link_to 'My products', products_path, class:"dropdown-item" %>
+                <%= link_to "Logout", destroy_user_session_path,
+                                      class:"dropdown-item",
+                                      method: :delete %>
+                <%=link_to 'My profile', edit_user_registration_path(current_user), class:"dropdown-item" %>
+              </div>
             </div>
           </div>
         <% else %>

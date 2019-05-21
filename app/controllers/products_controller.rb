@@ -2,8 +2,8 @@
 
 # Product controller with the CRUD methods
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: [ :index, :show ]
-  before_action :set_product, except:[ :index, :new, :create ]
+  before_action :authenticate_user!, except: [ :show ]
+  before_action :set_product, except:[ :index, :new, :create, :show ]
 
   def index
     @products = Product.product_by_user(current_user)
