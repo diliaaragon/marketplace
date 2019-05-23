@@ -9,28 +9,43 @@
                             'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application',
                                'data-turbolinks-track': 'reload' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+   <%= favicon_link_tag asset_path('shoppy.png') %>
   </head>
 
   <body>
-    <nav class="navbar bg-dark navbar-dark p-0">
-      <%= link_to root_path do %>
+    <nav class="navbar bg-dark navbar-dark pl-4">
+      <%= link_to root_path, class:"title navbar-brand text-info" do %>
         <%= image_tag('shoppy.png',
                       style: 'width: 40px;',
-                      class:"navbar-brand") %>
+                      class:"navbar-brand")%>
         Shoppy
       <% end %>
-      <ul class="nav nav-tabs justify-content-end">
+      <ul class="nav justify-content-end">
         <% if signed_in? %>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button"
-                                                              id="dropdownMenuButton"
-                                                              data-toggle="dropdown"
-                                                              aria-haspopup="true"
-                                                              aria-expanded="false">
-              <%= current_user.first_name %> <%= current_user.last_name %>
+          <li class="nav nav-item">
+            <div class="dropdown">
+              <button class=" btn mr-2" type="button"
+                                                id="dropdownMenuButton"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true"
+                                                aria-expanded="false">
+              <%= image_tag('sum2.png',style: 'width: 40px;', class:" p-0 mb-2") %>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <%= link_to 'Add products', new_product_path, class:"dropdown-item" %>
+                <%= link_to 'Add category', new_category_path, class:"dropdown-item" %>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown">
+              <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+                                                                id="dropdownMenuButton"
+                                                                data-toggle="dropdown"
+                                                                aria-haspopup="true"
+                                                                aria-expanded="false">
+                <%= image_tag('user.png',style: 'width: 20px;', class:"navbar-brand mt-1")%>
+                <%= current_user.first_name %> <%= current_user.last_name %>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <%= link_to 'My products', products_path, class:"dropdown-item" %>
@@ -40,15 +55,15 @@
                 <%=link_to 'My profile', edit_user_registration_path(current_user), class:"dropdown-item" %>
               </div>
             </div>
-          </div>
+          </li>
         <% else %>
           <li class="nav-item">
           <%= link_to "Log in", new_user_session_path,
-                                class:"btn btn-outline-primary m-2 p-2" %>
+                                class:"btn btn-info m-2 p-2" %>
           </li>
           <li class="nav-item">
           <%= link_to "Sign Up", new_user_registration_path,
-                                 class:"btn btn-outline-light m-2 p-2" %>
+                                 class:"btn btn-light m-2 p-2" %>
           </li>
         <% end %>
       </ul>
