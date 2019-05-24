@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
+  resources :users, only: [:show]
   get 'welcome/index'
   root 'welcome#index'
   put "/products/:id/publish", to: "products#publish"
