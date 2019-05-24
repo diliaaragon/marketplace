@@ -14,6 +14,7 @@ class Product < ApplicationRecord
   validates :description, presence: true, length: { minimum: 10 }
   validates :quantity, presence: true
   validates :price, presence: true
+  validates :image, presence: true
 
   aasm :column => 'status' do
     state :unpublished, initial: true

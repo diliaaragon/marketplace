@@ -6,7 +6,11 @@
         <span>$<%= @product.price%></span>
       </div>
       <div class="col">
-       <%=  image_tag @product.image, style: 'width: 180px;', class:" p-0 mb-2 float-right"%>
+       <% if @product.image.attached? %>
+          <%= image_tag( @product.image, class:"p-0 mb-2 float-right", style:'width: 180px') %>
+        <% else %>
+          <%= image_tag('gris.jpg', class:"p-0 mb-2 float-right", style:'width: 180px') %>
+        <% end %>
       </div>
     </div>
     <ul class="p-3">
