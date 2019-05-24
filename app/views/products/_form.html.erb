@@ -4,13 +4,6 @@
     <%= f.file_field :image %><br>
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.label "Categories: " %><br />
-    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
-      <div class="collection-check-box">
-        <%= b.check_box %>
-        <%= b.label %>
-      </div><br>
-     <% end %>
     <%= f.input :quantity %>
     <%= f.input :price %>
     <%= f.button :submit, class:"btn btn-dark" %>
