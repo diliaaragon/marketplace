@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[facebook]
+         :omniauthable, omniauth_providers: %i[facebook google_oauth2]
 
   validates :photo, presence: true
   validates :first_name, presence: true, length: { minimum: 2, maximum: 25 }

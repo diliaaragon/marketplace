@@ -263,6 +263,8 @@ Devise.setup do |config|
   config.omniauth :facebook, "302636304011868", "c90e24eb42b1e40095fb51daa0755e25",
                   scope: 'email', info_fields: 'email, first_name, last_name',
                   token_params: { parse: :json }
+  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
