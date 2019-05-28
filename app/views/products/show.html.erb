@@ -22,6 +22,12 @@
                 <td><%= @product.description %></td>
               <tr>
               <tr>
+                <td>Categories: </td>
+                <% @product.categories.each do |category| %>
+                  <td><%= category.name %></td>
+                <% end %>
+              <tr>
+              <tr>
                 <td>Units available: </td>
                 <td><%= @product.quantity %></td>
               <tr>
