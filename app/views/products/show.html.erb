@@ -6,12 +6,22 @@
         <span>$<%= @product.price%></span>
       </div>
       <div class="col">
-       <%=  image_tag @product.image, style: 'width: 180px;', class:" p-0 mb-2 float-right"%>
+       <% if @product.image.attached? %>
+          <%= image_tag( @product.image, class:"p-0 mb-2 float-right", style:'width: 180px') %>
+        <% else %>
+          <%= image_tag('gris.jpg', class:"p-0 mb-2 float-right", style:'width: 180px') %>
+        <% end %>
       </div>
     </div>
     <ul class="p-3">
       <li class="plan-feature text-info"><span>Description:</span> <%= @product.description %></li>
       <li class="plan-feature text-info"><span>Units available:</span> <%= @product.quantity %></li>
+      <li class="plan-feature text-info"><span>Categories:</span></li>
+      <% @product.categories.each do |category|%>
+        <%= category.name %>
+      <% end %>
+      <li class="plan-feature text-info"><span>Seller:</span> <%= @product.user.first_name + " " + @product.user.last_name %></li>
+      <li class="plan-feature text-info"><span>Cellphone:</span> <%= @product.user.cellphone%></li>
     </ul>
     <%= link_to 'Back', root_path, class:"btn btn-secondary text-center" %>
     <% if signed_in? && @product.user_id == current_user.id %>
