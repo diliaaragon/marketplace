@@ -42,3 +42,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem "letter_opener"
 end
+
+group :test do
+  gem 'database_cleaner'
+end
