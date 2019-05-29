@@ -30,6 +30,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails'
   gem 'pry-rails', '~> 0.3.9'
+  gem 'rspec-rails'
 end
 
 group :development do
