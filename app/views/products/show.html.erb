@@ -1,49 +1,31 @@
-<div class="container">
-  <h1 class="text-info title">Product information</h1>
-  <br>
-  <div class="well span8 offset2">
-    <div class="row-fluid user-row">
-      <div class="w-25 h-25">
-        <%= image_tag @product.image, class:"w-50 h-25" if @product.image.attached? %>
+<div class="container w-50 pricing-table pricing-three-column border border-info rounded shadow-lg p-3 mb-5 bg-white ">
+  <div class="span4 p-1 pb-3">
+    <div class="plan-name-silver row">
+      <div class="col">
+        <h2 class="text-info title"><%= @product.name %></h2>
+        <span>$<%= @product.price%></span>
       </div>
-    </div>  
-    <div class="panel-body">
-      <div class="row-fluid">
-        <div class="span6">
-          <table class="table table-condensed table-responsive 
-            table-user-information">
-            <body>
-              <tr>
-                <td>Name: </td>
-                <td><%= @product.name %></td>
-              <tr>
-              <tr>
-                <td>Description: </td>
-                <td><%= @product.description %></td>
-              <tr>
-              <tr>
-                <td>Categories: </td>
-                <% @product.categories.each do |category| %>
-                  <td><%= category.name %></td>
-                <% end %>
-              <tr>
-              <tr>
-                <td>Units available: </td>
-                <td><%= @product.quantity %></td>
-              <tr>
-              <tr>
-                <td>Price: </td>
-                <td><%= @product.price%></td>
-              <tr>
-            </body>
-          </table>
-        </div>
+      <div class="col">
+       <% if @product.image.attached? %>
+          <%= image_tag( @product.image, class:"p-0 mb-2 float-right", style:'width: 180px') %>
+        <% else %>
+          <%= image_tag('gris.jpg', class:"p-0 mb-2 float-right", style:'width: 180px') %>
+        <% end %>
       </div>
     </div>
+    <ul class="p-3">
+      <li class="plan-feature text-info"><span>Description:</span> <%= @product.description %></li>
+      <li class="plan-feature text-info"><span>Units available:</span> <%= @product.quantity %></li>
+      <li class="plan-feature text-info"><span>Categories:</span></li>
+      <% @product.categories.each do |category|%>
+        <%= category.name %>
+      <% end %>
+      <li class="plan-feature text-info"><span>Seller:</span> <%= @product.user.first_name + " " + @product.user.last_name %></li>
+      <li class="plan-feature text-info"><span>Cellphone:</span> <%= @product.user.cellphone%></li>
+    </ul>
+    <%= link_to 'Back', root_path, class:"btn btn-secondary text-center" %>
+    <% if signed_in? && @product.user_id == current_user.id %>
+      <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-info aling-center" %>
+    <% end %>
   </div>
-  <%= link_to 'Back', root_path, class:"btn btn-primary" %>
-  <% if current_user == @product.user_id %>
-    <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-primary" %>
-  <% end %>
 </div>
-
