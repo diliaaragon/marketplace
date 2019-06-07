@@ -2,6 +2,6 @@
 
 # Aplication Mailer.
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
-  layout 'mailer'
+  default from: 'no-reply@shoppy.com'
+  layout nil
 end

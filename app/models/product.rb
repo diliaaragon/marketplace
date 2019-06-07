@@ -20,7 +20,7 @@ class Product < ApplicationRecord
     state :published
     state :archived
 
-    event :publish do
+    event :publish, after: :send_mail do
       transitions from: [:unpublished, :archived], to: :published
     end
 
@@ -34,4 +34,10 @@ class Product < ApplicationRecord
   end
 
   scope :product_by_user, ->(current_user) { where(user_id: current_user) }
+
+  private
+
+  def send_mail
+    UserMailer.product_publish(self).deliver_later
+  end
 end

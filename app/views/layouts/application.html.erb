@@ -45,9 +45,9 @@
                                                                 aria-haspopup="true"
                                                                 aria-expanded="false">
                 <% if current_user.photo.attached? %>
-                  <%= image_tag(current_user.photo,style: 'width: 30px;', class:"navbar-brand")%>
+                  <%= image_tag(current_user.photo, style: 'width: 30px;', class:"navbar-brand")%>
                 <% else %>
-                  <%= image_tag('photo.png',style: 'width: 30px;', class:"navbar-brand")%>
+                  <%= image_tag('photo.png', style: 'width: 30px;', class:"navbar-brand")%>
                 <% end %>
                 <%= current_user.first_name %> <%= current_user.last_name %>
               </button>
