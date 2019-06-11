@@ -41,3 +41,11 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem "letter_opener"
 end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'faker'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+end
