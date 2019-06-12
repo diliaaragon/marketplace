@@ -44,8 +44,9 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
+  gem 'simplecov', :require => false
 end
