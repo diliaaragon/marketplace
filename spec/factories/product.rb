@@ -6,5 +6,6 @@ FactoryBot.define do
     description  { Faker::Food.description }
     quantity { Faker::Number.number(2) }
     price { Faker::Number.number(5) }
+    status { 'published' }
   end
 end
