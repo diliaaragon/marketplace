@@ -9,6 +9,10 @@ class ProductsController < ApplicationController
     @products = Product.product_by_user(current_user)
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
   def new
     @product = Product.new
   end
@@ -35,10 +39,6 @@ class ProductsController < ApplicationController
   def archive
     @product.archive!
     redirect_to @product
-  end
-
-  def show
-    @product = Product.find(params[:id])
   end
 
   def update
