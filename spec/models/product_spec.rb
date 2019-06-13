@@ -1,50 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  it 'is valid with name, description, quantity, price and user_id' do 
-    user = create(:user, id: 1)
-    product = build(:product)
-    expect(product).to be_valid
+  let(:user) { create(:user)}
+  subject { FactoryBot.create(:product, user: user) }
+
+  describe 'validations' do
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_length_of(:name).is_at_least(3).is_at_most(15) }
+    it { is_expected.to validate_presence_of(:description) }
+    it { is_expected.to validate_length_of(:description).is_at_least(10) }
+    it { is_expected.to validate_presence_of(:quantity) }
+    it { is_expected.to validate_presence_of(:price) }
   end
 
-  it 'is invalid without user id' do 
-    user = create(:user, id: nil)
-    product = build(:product)
-    expect(product).to_not be_valid
-  end
-
-  it 'is invalid without name' do
-    product = build(:product, name: nil)
-    expect(product).to_not be_valid
-  end
-
-  it 'is invalid with a name length less than 3 characters' do
-    product = build(:product, name: 'lo')
-    expect(product).to_not be_valid
-  end
-
-  it 'is invalid with a name length greater than 10 characters' do
-    product = build(:product, name: 'this product is new')
-    expect(product).to_not be_valid
-  end
-
-  it 'is invalid without description' do
-    product = build(:product, description: nil)
-    expect(product).to_not be_valid
-  end
-
-  it 'is invalid with a description length less than 10 characters' do
-    product = build(:product, description:'hello')
-    expect(product).to_not be_valid
-  end
-
-  it 'is invalid without quantity' do
-    product = build(:product, quantity: nil)
-    expect(product).to_not be_valid
-  end
-
-  it 'is invalid without price' do
-    product = build(:product, price: nil)
-    expect(product).to_not be_valid
+  describe 'relations' do
+    it { is_expected.to have_and_belong_to_many(:categories) }
+    it { is_expected.to belong_to(:user) }
   end
 end
