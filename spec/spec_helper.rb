@@ -13,8 +13,6 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-require 'simplecov'
-SimpleCov.start
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -92,7 +90,7 @@ RSpec.configure do |config|
 
   # Seed global randomization in this process using the `--seed` CLI option.
   # Setting this allows you to use `--seed` to deterministically reproduce
-  # test failures related to randomization by passing the same `--seed` value
+  # test failures related to randomizaion by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
